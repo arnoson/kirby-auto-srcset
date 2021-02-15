@@ -1,6 +1,6 @@
 {
-  "name": "arnoson/auto-srcset",
-  "description": "Generate srcset dimensions automatically.",
+  "name": "arnoson/kirby-auto-srcset",
+  "description": "Generate srcset dimensions automatically",
   "type": "kirby-plugin",
   "require": {
     "getkirby/composer-installer": "^1.1"
