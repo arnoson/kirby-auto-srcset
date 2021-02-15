@@ -1,6 +1,6 @@
 # Kirby Auto Srcset
 A plugin for `Kirby 3` to generate an image srcset automatically.
-The automatic srcset generation is based on `Processwire CMS` user `DaveP`'s forum [post](https://processwire.com/talk/topic/12036-responsive-image-breakpoints-with-field-templates/).
+Based on `Processwire CMS` user `DaveP`'s forum [post](https://processwire.com/talk/topic/12036-responsive-image-breakpoints-with-field-templates/).
 
 ## Installation
 ### Manual download
