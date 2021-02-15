@@ -1,6 +1,6 @@
 <?php
 
-Kirby::plugin('arnoson/auto-srcset', [
+Kirby::plugin('arnoson/kirby-auto-srcset', [
   'options' => [
     'minWidth' => 300,
     'maxWidth' => 1000,
