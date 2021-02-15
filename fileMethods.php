@@ -20,14 +20,17 @@ return [
     int $fileSizeStep = null,
     int $maxSteps = null
   ): ?string {
-    $minWidth = $minWidth ?? option('arnoson.auto-srcset.minWidth', 300);
-    $maxWidth = $maxWidth ?? option('arnoson.auto-srcset.maxWidth', 1024);
-    $quality = $quality ?? option('arnoson.auto-srcset.quality');
-    $maxSteps = $maxSteps ?? option('arnoson.auto-srcset.maxSteps', 10);
-    $fileSizeStep = $fileSizeStep ?? option('arnoson.auto-srcset.fileSizeStep');
+    $minWidth = $minWidth ?? option('arnoson.kirby-auto-srcset.minWidth');
+    $maxWidth = $maxWidth ?? option('arnoson.kirby-auto-srcset.maxWidth');
+    $quality = $quality ?? option('arnoson.kirby-auto-srcset.quality');
+    $maxSteps = $maxSteps ?? option('arnoson.kirby-auto-srcset.maxSteps');
+    $fileSizeStep = $fileSizeStep ?? option('arnoson.kirby-auto-srcset.fileSizeStep');
     // The argument is specified in kb, but we calculate with bytes.
     $fileSizeStep *= 1024;
-  
+
+    // Make sure tha images doesn't get blown up.
+    $maxWidth = min($this->width(), $maxWidth);
+
     $minFile = $this->resize($minWidth, null, $quality);
     $maxFile = $this->resize($maxWidth, null, $quality);
     $fileSizeDifference = $maxFile->size() - $minFile->size();
