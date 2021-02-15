@@ -26,7 +26,7 @@ $image->srcset([300, 400, 600, 1024]);
 // Instead of specifying the dimensions of a srcset manually like this:
 // $image->srcset([300, 400, 600, 1024])
 // `kirby-auto-srcset` will calculate the sizes for you.
-$image->autoSrcset([
+$srcset = $image->autoSrcset([
   'minWidth' => 300,
   'maxWidth' => 1024
 ]);
@@ -37,6 +37,10 @@ between. Depending on your image it will result in different dimensions.
 and tries to create the resulting images in roughly 20kb file sizes steps.
 20kb seems to be a good value for responsive images but you can adjust it in the 
 plugin's config.
+
+## Quality
+By default the plugin will create the images with 80% quality as this seems to 
+enough for most uses cases. You can adjust the quality in the [configuration](#configuration).
 
 ## Configuration
 All options can either be set in the config or passed to the `autoSrcset` method.
