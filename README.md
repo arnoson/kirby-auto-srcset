@@ -40,7 +40,7 @@ plugin's config.
 
 ## Quality
 By default the plugin will create the images with 80% quality as this seems to 
-enough for most uses cases. You can adjust the quality in the [configuration](#configuration).
+be enough for most uses cases. You can adjust the quality in the [configuration](#configuration).
 
 ## Configuration
 All options can either be set in the config or passed to the `autoSrcset` method.
