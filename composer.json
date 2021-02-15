@@ -1,7 +1,8 @@
 {
   "name": "arnoson/kirby-auto-srcset",
-  "description": "Generate srcset dimensions automatically",
+  "description": "Generate image srcset automatically",
   "type": "kirby-plugin",
+  "license": "MIT",
   "require": {
     "getkirby/composer-installer": "^1.1"
   }
