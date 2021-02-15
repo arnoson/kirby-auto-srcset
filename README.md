@@ -32,15 +32,14 @@ $image->autoSrcset([
 ]);
 ```
 This will create the minimum and maximum dimensions as well as the dimensions in 
-between. Depending on your image it will result in different in between dimensions.
-`kirby-auto-srcset` will figure out the dimensions based on the image's file size 
+between. Depending on your image it will result in different dimensions.
+`kirby-auto-srcset` will figure out these dimensions based on the image's file size 
 and tries to create the resulting images in roughly 20kb file sizes steps.
-20kb seems to be a good value for responsive images but you can also adjust it 
-in the plugin's config.
+20kb seems to be a good value for responsive images but you can adjust it in the 
+plugin's config.
 
 ## Configuration
-All options can either be set in the configuration or passed to the `autoSrcset` 
-method.
+All options can either be set in the config or passed to the `autoSrcset` method.
 ```php
 // config.js
 return [
