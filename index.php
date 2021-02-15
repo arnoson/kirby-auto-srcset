@@ -8,5 +8,5 @@ Kirby::plugin('arnoson/kirby-auto-srcset', [
     'fileSizeStep' => 20,
     'maxSteps' => 10,
   ],
-  'fileMethods' => require_once __DIR__ . '/fileMethods/autoSrcset.php'
+  'fileMethods' => require_once __DIR__ . '/fileMethods.php'
 ]);
