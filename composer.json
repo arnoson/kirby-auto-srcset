@@ -4,6 +4,6 @@
   "type": "kirby-plugin",
   "license": "MIT",
   "require": {
-    "getkirby/composer-installer": "^1.1"
+    "getkirby/composer-installer": "^1.2"
   }
 }

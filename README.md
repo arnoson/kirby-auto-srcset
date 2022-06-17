@@ -1,58 +1,58 @@
 # Kirby Auto Srcset
+
 A plugin for `Kirby 3` to generate an image srcset automatically.
 Based on `Processwire CMS` user `DaveP`'s forum [post](https://processwire.com/talk/topic/12036-responsive-image-breakpoints-with-field-templates/).
 
 ## Installation
-### Manual download
-Download and copy this repository to `site/plugins/kirby-auto-srcset`.
 
-### Git submodiule
-```
-git submodule add https://github.com/arnoson/kirby-auto-srcset.git site/plugins/kirby-auto-srcset
-```
-
-### Composer
 ```
 composer require arnoson/kirby-auto-srcset
 ```
 
 ## Usage
-Instead of specifying the dimensions of a srcset manually
+
 ```php
-$image->srcset([300, 400, 600, 1024]);
-```
-`kirby-auto-srcset` will calculate the sizes for you.
-```php
-// Instead of specifying the dimensions of a srcset manually like this:
-// $image->srcset([300, 400, 600, 1024])
-// `kirby-auto-srcset` will calculate the sizes for you.
 $srcset = $image->autoSrcset([
   'minWidth' => 300,
-  'maxWidth' => 1024
+  'maxWidth' => 1024,
+  'format' => 'avif'
+  'quality' => 80
 ]);
 ```
-This will create the minimum and maximum dimensions as well as the dimensions in 
-between. Depending on your image it will result in different dimensions.
-`kirby-auto-srcset` will figure out these dimensions based on the image's file size 
-and tries to create the resulting images in roughly 20kb file sizes steps.
-20kb seems to be a good value for responsive images but you can adjust it in the 
-plugin's config.
 
-## Quality
-By default the plugin will create the images with 80% quality as this seems to 
-be enough for most uses cases. You can adjust the quality in the [configuration](#configuration).
+This will create the min and max dimensions as well as the dimensions in between,
+trying to create the images in roughly 20kb file size steps.
 
 ## Configuration
-All options can either be set in the config or passed to the `autoSrcset` method.
+
+All options passed to `$file->autoSrcset()` directly or set in the config.
+
 ```php
-// config.js
+// your-template.php
+$srcset = $image->autoSrcset([
+  'minWidth' => 300,
+  'maxWidth' => 1000,
+
+  // in kb
+  'fileSizeStep' => 20,
+
+  // The maximum number of images to be created.
+  'maxSteps' => 10,
+
+  // Options to pass to kirby's `$file->thumb()` method.
+  'quality' => 80,
+  'format' => 'webp',
+  // ...
+]);
+```
+
+```php
+// config.php
 return [
   'arnoson/kirby-auto-srcset' => [
     'minWidth' => 300,
     'maxWidth' => 1000,
-    'quality' => 80,
-    'fileSizeStep' => 20, // in kb
-    'maxSteps' => 10, // The maximum number of images to be created.
+    // ...
   ]
 ];
 ```
