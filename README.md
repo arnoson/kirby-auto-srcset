@@ -15,8 +15,10 @@ composer require arnoson/kirby-auto-srcset
 $srcset = $image->autoSrcset([
   'minWidth' => 300,
   'maxWidth' => 1024,
-  'format' => 'avif'
-  'quality' => 80
+  'thumb' => [
+    'format' => 'avif'
+    'quality' => 80
+  ]
 ]);
 ```
 
@@ -25,7 +27,7 @@ trying to create the images in roughly 20kb file size steps.
 
 ## Configuration
 
-All options passed to `$file->autoSrcset()` directly or set in the config.
+All options can be passed to `$file->autoSrcset()` directly or set in the config.
 
 ```php
 // your-template.php
@@ -39,10 +41,16 @@ $srcset = $image->autoSrcset([
   // The maximum number of images to be created.
   'maxSteps' => 10,
 
+  // An optional ratio that is used to crop the image.
+  'ratio' => 16 / 9,
+
   // Options to pass to kirby's `$file->thumb()` method.
-  'quality' => 80,
-  'format' => 'webp',
-  // ...
+  'thumb' => [
+    'quality' => 80,
+    'format' => 'jpeg',
+    'crop' => 'center',
+    // ...
+  ],
 ]);
 ```
 
@@ -53,6 +61,6 @@ return [
     'minWidth' => 300,
     'maxWidth' => 1000,
     // ...
-  ]
+  ],
 ];
 ```
