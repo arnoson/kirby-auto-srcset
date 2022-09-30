@@ -3,6 +3,13 @@
   "description": "Generate image srcset automatically",
   "type": "kirby-plugin",
   "license": "MIT",
+  "homepage": "https://github.com/arnoson/kirby-auto-srcset",
+  "version": "2.0.0",
+  "authors": [
+    {
+      "name": "Arno Schlipf"
+    }
+  ],
   "require": {
     "getkirby/composer-installer": "^1.2"
   }
