@@ -1,4 +1,6 @@
 {
-  "editor.tabSize": 2,
-  "editor.insertSpaces": true
+  "editor.formatOnSave": true,
+  "[php]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
