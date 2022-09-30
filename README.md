@@ -16,9 +16,9 @@ $srcset = $image->autoSrcset([
   'minWidth' => 300,
   'maxWidth' => 1024,
   'thumb' => [
-    'format' => 'avif'
-    'quality' => 80
-  ]
+    'format' => 'avif',
+    'quality' => 80,
+  ],
 ]);
 ```
 
