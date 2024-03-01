@@ -44,14 +44,14 @@ return [
 
       $minFile = $this->thumb(
         A::merge($thumb, [
-          'width' => $minWidth,
+          'width' => round($minWidth),
           'height' => round($minWidth / $ratio),
         ])
       );
 
       $maxFile = $this->thumb(
         array_merge($thumb, [
-          'width' => $maxWidth,
+          'width' => round($maxWidth),
           'height' => round($maxWidth / $ratio),
         ])
       );
@@ -76,7 +76,7 @@ return [
       $sizes = [];
       foreach ($widths as $width) {
         $sizes[$width . 'w'] = array_merge($thumb, [
-          'width' => $width,
+          'width' => round($width),
           'height' => round($width / $ratio),
         ]);
       }
