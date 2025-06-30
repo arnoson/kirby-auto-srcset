@@ -1,6 +1,10 @@
 {
 	"devDependencies": {
-		"prettier": "^2.7.1",
-		"@prettier/plugin-php": "^0.19.1"
+		"@prettier/plugin-php": "^0.22.0",
+		"bumpp": "^10.2.0",
+		"prettier": "^3.0"
+	},
+	"scripts": {
+		"release": "bumpp ./composer.json"
 	}
 }
