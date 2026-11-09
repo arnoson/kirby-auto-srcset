@@ -40,7 +40,7 @@ return [
       $fileSizeStep = $options['fileSizeStep'] * 1024;
 
       // Make sure that the images doesn't get blown up.
-      $maxWidth = min($width, $maxWidth);
+      $maxWidth = (int) round(min($width, $maxWidth));
 
       $minFile = $this->thumb(
         A::merge($thumb, [
@@ -75,6 +75,7 @@ return [
 
       $sizes = [];
       foreach ($widths as $width) {
+        $width = (int) round($width);
         $sizes[$width . 'w'] = array_merge($thumb, [
           'width' => round($width),
           'height' => round($width / $ratio),
